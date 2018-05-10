@@ -1,8 +1,10 @@
+#!/bin/bash
 wget https://github.com/xtaci/kcptun/releases/download/v20180316/kcptun-linux-amd64-20180316.tar.gz
 tar zxf kcptun-linux-amd64-20180316.tar.gz
 rm -f client_linux_amd64 kcptun-linux-amd64-20180316.tar.gz
 chmod a+x server_linux_amd64
 mv -f server_linux_amd64 /usr/bin
+
 num=$((30000 + RANDOM))
 pass=`date +%s | sha256sum | base64 | head -c 12`
 port=`grep -oP "\d{4,5}" /etc/ss-config.json`
