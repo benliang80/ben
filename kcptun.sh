@@ -1,7 +1,9 @@
 #!/bin/bash
-wget https://github.com/xtaci/kcptun/releases/download/v20180316/kcptun-linux-amd64-20180316.tar.gz
-tar zxf kcptun-linux-amd64-20180316.tar.gz
-rm -f client_linux_amd64 kcptun-linux-amd64-20180316.tar.gz
+yum install -y wget
+VERSION=20180316
+wget https://github.com/xtaci/kcptun/releases/download/v$VERSION/kcptun-linux-amd64-$VERSION.tar.gz
+tar zxf kcptun-linux-amd64-$VERSION.tar.gz
+rm -f client_linux_amd64 kcptun-linux-amd64-$VERSION.tar.gz
 chmod a+x server_linux_amd64
 mv -f server_linux_amd64 /usr/bin
 
